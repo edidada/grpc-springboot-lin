@@ -55,3 +55,23 @@ Caused by: java.net.ConnectException: Connection timed out: no further informati
 ```
 
 不能在idea maven插件上跑，只能mvn package/install
+
+
+```sbtshell
+io.grpc.StatusRuntimeException: UNIMPLEMENTED
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:233) ~[grpc-stub-1.15.1.jar:1.15.1]
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:214) ~[grpc-stub-1.15.1.jar:1.15.1]
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:139) ~[grpc-stub-1.15.1.jar:1.15.1]
+	at cn.wdidada.grpc.lib.auth.AuthorizationGrpc$AuthorizationBlockingStub.sayHello(AuthorizationGrpc.java:178) ~[classes/:na]
+	at com.linshen.grpcserver.IsoProxyService.rpcCall(IsoProxyService.java:28) ~[classes/:na]
+	at cn.wdidada.grpc.lib.proxy.IsomerizationProxyGrpc$MethodHandlers.invoke(IsomerizationProxyGrpc.java:236) ~[classes/:na]
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:171) ~[grpc-stub-1.15.1.jar:1.15.1]
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:283) ~[grpc-core-1.15.1.jar:1.15.1]
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:707) ~[grpc-core-1.15.1.jar:1.15.1]
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[grpc-core-1.15.1.jar:1.15.1]
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123) ~[grpc-core-1.15.1.jar:1.15.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_231]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_231]
+
+```
