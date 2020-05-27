@@ -14,7 +14,7 @@ import net.devh.springboot.autoconfigure.grpc.server.GrpcService;
 
 @Slf4j
 @GrpcService(Proxy.class)
-public class GreeterService extends IsomerizationProxyGrpc.IsomerizationProxyImplBase {
+public class IsoProxyService extends IsomerizationProxyGrpc.IsomerizationProxyImplBase {
 
     @Override
     public void rpcCall(Proxy.ProxyRequest request, StreamObserver<Proxy.ProxyReply> responseObserver) {
