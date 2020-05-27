@@ -1,4 +1,4 @@
-package com.linshen.grpc.lib;
+package cn.wdidada.grpc.lib.auth;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
@@ -17,44 +17,44 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * The greeter service definition.
+ * The greeting service definition.
  * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.15.1)",
-    comments = "Source: greeter.proto")
-public final class GreeterGrpc {
+    comments = "Source: auth.proto")
+public final class AuthorizationGrpc {
 
-  private GreeterGrpc() {}
+  private AuthorizationGrpc() {}
 
-  public static final String SERVICE_NAME = "Greeter";
+  public static final String SERVICE_NAME = "helloworld.Authorization";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.linshen.grpc.lib.GreeterOuterClass.HelloRequest,
-      com.linshen.grpc.lib.GreeterOuterClass.HelloReply> getSayHelloMethod;
+  private static volatile io.grpc.MethodDescriptor<cn.wdidada.grpc.lib.auth.Auth.AuthRequest,
+      cn.wdidada.grpc.lib.auth.Auth.AuthReply> getSayHelloMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "SayHello",
-      requestType = com.linshen.grpc.lib.GreeterOuterClass.HelloRequest.class,
-      responseType = com.linshen.grpc.lib.GreeterOuterClass.HelloReply.class,
+      requestType = cn.wdidada.grpc.lib.auth.Auth.AuthRequest.class,
+      responseType = cn.wdidada.grpc.lib.auth.Auth.AuthReply.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.linshen.grpc.lib.GreeterOuterClass.HelloRequest,
-      com.linshen.grpc.lib.GreeterOuterClass.HelloReply> getSayHelloMethod() {
-    io.grpc.MethodDescriptor<com.linshen.grpc.lib.GreeterOuterClass.HelloRequest, com.linshen.grpc.lib.GreeterOuterClass.HelloReply> getSayHelloMethod;
-    if ((getSayHelloMethod = GreeterGrpc.getSayHelloMethod) == null) {
-      synchronized (GreeterGrpc.class) {
-        if ((getSayHelloMethod = GreeterGrpc.getSayHelloMethod) == null) {
-          GreeterGrpc.getSayHelloMethod = getSayHelloMethod = 
-              io.grpc.MethodDescriptor.<com.linshen.grpc.lib.GreeterOuterClass.HelloRequest, com.linshen.grpc.lib.GreeterOuterClass.HelloReply>newBuilder()
+  public static io.grpc.MethodDescriptor<cn.wdidada.grpc.lib.auth.Auth.AuthRequest,
+      cn.wdidada.grpc.lib.auth.Auth.AuthReply> getSayHelloMethod() {
+    io.grpc.MethodDescriptor<cn.wdidada.grpc.lib.auth.Auth.AuthRequest, cn.wdidada.grpc.lib.auth.Auth.AuthReply> getSayHelloMethod;
+    if ((getSayHelloMethod = AuthorizationGrpc.getSayHelloMethod) == null) {
+      synchronized (AuthorizationGrpc.class) {
+        if ((getSayHelloMethod = AuthorizationGrpc.getSayHelloMethod) == null) {
+          AuthorizationGrpc.getSayHelloMethod = getSayHelloMethod = 
+              io.grpc.MethodDescriptor.<cn.wdidada.grpc.lib.auth.Auth.AuthRequest, cn.wdidada.grpc.lib.auth.Auth.AuthReply>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "Greeter", "SayHello"))
+                  "helloworld.Authorization", "SayHello"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.linshen.grpc.lib.GreeterOuterClass.HelloRequest.getDefaultInstance()))
+                  cn.wdidada.grpc.lib.auth.Auth.AuthRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.linshen.grpc.lib.GreeterOuterClass.HelloReply.getDefaultInstance()))
-                  .setSchemaDescriptor(new GreeterMethodDescriptorSupplier("SayHello"))
+                  cn.wdidada.grpc.lib.auth.Auth.AuthReply.getDefaultInstance()))
+                  .setSchemaDescriptor(new AuthorizationMethodDescriptorSupplier("SayHello"))
                   .build();
           }
         }
@@ -65,40 +65,40 @@ public final class GreeterGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static GreeterStub newStub(io.grpc.Channel channel) {
-    return new GreeterStub(channel);
+  public static AuthorizationStub newStub(io.grpc.Channel channel) {
+    return new AuthorizationStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static GreeterBlockingStub newBlockingStub(
+  public static AuthorizationBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new GreeterBlockingStub(channel);
+    return new AuthorizationBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static GreeterFutureStub newFutureStub(
+  public static AuthorizationFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new GreeterFutureStub(channel);
+    return new AuthorizationFutureStub(channel);
   }
 
   /**
    * <pre>
-   * The greeter service definition.
+   * The greeting service definition.
    * </pre>
    */
-  public static abstract class GreeterImplBase implements io.grpc.BindableService {
+  public static abstract class AuthorizationImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
      * Sends a greeting
      * </pre>
      */
-    public void sayHello(com.linshen.grpc.lib.GreeterOuterClass.HelloRequest request,
-        io.grpc.stub.StreamObserver<com.linshen.grpc.lib.GreeterOuterClass.HelloReply> responseObserver) {
+    public void sayHello(cn.wdidada.grpc.lib.auth.Auth.AuthRequest request,
+        io.grpc.stub.StreamObserver<cn.wdidada.grpc.lib.auth.Auth.AuthReply> responseObserver) {
       asyncUnimplementedUnaryCall(getSayHelloMethod(), responseObserver);
     }
 
@@ -108,8 +108,8 @@ public final class GreeterGrpc {
             getSayHelloMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.linshen.grpc.lib.GreeterOuterClass.HelloRequest,
-                com.linshen.grpc.lib.GreeterOuterClass.HelloReply>(
+                cn.wdidada.grpc.lib.auth.Auth.AuthRequest,
+                cn.wdidada.grpc.lib.auth.Auth.AuthReply>(
                   this, METHODID_SAY_HELLO)))
           .build();
     }
@@ -117,23 +117,23 @@ public final class GreeterGrpc {
 
   /**
    * <pre>
-   * The greeter service definition.
+   * The greeting service definition.
    * </pre>
    */
-  public static final class GreeterStub extends io.grpc.stub.AbstractStub<GreeterStub> {
-    private GreeterStub(io.grpc.Channel channel) {
+  public static final class AuthorizationStub extends io.grpc.stub.AbstractStub<AuthorizationStub> {
+    private AuthorizationStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private GreeterStub(io.grpc.Channel channel,
+    private AuthorizationStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected GreeterStub build(io.grpc.Channel channel,
+    protected AuthorizationStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new GreeterStub(channel, callOptions);
+      return new AuthorizationStub(channel, callOptions);
     }
 
     /**
@@ -141,8 +141,8 @@ public final class GreeterGrpc {
      * Sends a greeting
      * </pre>
      */
-    public void sayHello(com.linshen.grpc.lib.GreeterOuterClass.HelloRequest request,
-        io.grpc.stub.StreamObserver<com.linshen.grpc.lib.GreeterOuterClass.HelloReply> responseObserver) {
+    public void sayHello(cn.wdidada.grpc.lib.auth.Auth.AuthRequest request,
+        io.grpc.stub.StreamObserver<cn.wdidada.grpc.lib.auth.Auth.AuthReply> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSayHelloMethod(), getCallOptions()), request, responseObserver);
     }
@@ -150,23 +150,23 @@ public final class GreeterGrpc {
 
   /**
    * <pre>
-   * The greeter service definition.
+   * The greeting service definition.
    * </pre>
    */
-  public static final class GreeterBlockingStub extends io.grpc.stub.AbstractStub<GreeterBlockingStub> {
-    private GreeterBlockingStub(io.grpc.Channel channel) {
+  public static final class AuthorizationBlockingStub extends io.grpc.stub.AbstractStub<AuthorizationBlockingStub> {
+    private AuthorizationBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private GreeterBlockingStub(io.grpc.Channel channel,
+    private AuthorizationBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected GreeterBlockingStub build(io.grpc.Channel channel,
+    protected AuthorizationBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new GreeterBlockingStub(channel, callOptions);
+      return new AuthorizationBlockingStub(channel, callOptions);
     }
 
     /**
@@ -174,7 +174,7 @@ public final class GreeterGrpc {
      * Sends a greeting
      * </pre>
      */
-    public com.linshen.grpc.lib.GreeterOuterClass.HelloReply sayHello(com.linshen.grpc.lib.GreeterOuterClass.HelloRequest request) {
+    public cn.wdidada.grpc.lib.auth.Auth.AuthReply sayHello(cn.wdidada.grpc.lib.auth.Auth.AuthRequest request) {
       return blockingUnaryCall(
           getChannel(), getSayHelloMethod(), getCallOptions(), request);
     }
@@ -182,23 +182,23 @@ public final class GreeterGrpc {
 
   /**
    * <pre>
-   * The greeter service definition.
+   * The greeting service definition.
    * </pre>
    */
-  public static final class GreeterFutureStub extends io.grpc.stub.AbstractStub<GreeterFutureStub> {
-    private GreeterFutureStub(io.grpc.Channel channel) {
+  public static final class AuthorizationFutureStub extends io.grpc.stub.AbstractStub<AuthorizationFutureStub> {
+    private AuthorizationFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private GreeterFutureStub(io.grpc.Channel channel,
+    private AuthorizationFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected GreeterFutureStub build(io.grpc.Channel channel,
+    protected AuthorizationFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new GreeterFutureStub(channel, callOptions);
+      return new AuthorizationFutureStub(channel, callOptions);
     }
 
     /**
@@ -206,8 +206,8 @@ public final class GreeterGrpc {
      * Sends a greeting
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.linshen.grpc.lib.GreeterOuterClass.HelloReply> sayHello(
-        com.linshen.grpc.lib.GreeterOuterClass.HelloRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<cn.wdidada.grpc.lib.auth.Auth.AuthReply> sayHello(
+        cn.wdidada.grpc.lib.auth.Auth.AuthRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSayHelloMethod(), getCallOptions()), request);
     }
@@ -220,10 +220,10 @@ public final class GreeterGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final GreeterImplBase serviceImpl;
+    private final AuthorizationImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(GreeterImplBase serviceImpl, int methodId) {
+    MethodHandlers(AuthorizationImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -233,8 +233,8 @@ public final class GreeterGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SAY_HELLO:
-          serviceImpl.sayHello((com.linshen.grpc.lib.GreeterOuterClass.HelloRequest) request,
-              (io.grpc.stub.StreamObserver<com.linshen.grpc.lib.GreeterOuterClass.HelloReply>) responseObserver);
+          serviceImpl.sayHello((cn.wdidada.grpc.lib.auth.Auth.AuthRequest) request,
+              (io.grpc.stub.StreamObserver<cn.wdidada.grpc.lib.auth.Auth.AuthReply>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -252,32 +252,32 @@ public final class GreeterGrpc {
     }
   }
 
-  private static abstract class GreeterBaseDescriptorSupplier
+  private static abstract class AuthorizationBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    GreeterBaseDescriptorSupplier() {}
+    AuthorizationBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.linshen.grpc.lib.GreeterOuterClass.getDescriptor();
+      return cn.wdidada.grpc.lib.auth.Auth.getDescriptor();
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("Greeter");
+      return getFileDescriptor().findServiceByName("Authorization");
     }
   }
 
-  private static final class GreeterFileDescriptorSupplier
-      extends GreeterBaseDescriptorSupplier {
-    GreeterFileDescriptorSupplier() {}
+  private static final class AuthorizationFileDescriptorSupplier
+      extends AuthorizationBaseDescriptorSupplier {
+    AuthorizationFileDescriptorSupplier() {}
   }
 
-  private static final class GreeterMethodDescriptorSupplier
-      extends GreeterBaseDescriptorSupplier
+  private static final class AuthorizationMethodDescriptorSupplier
+      extends AuthorizationBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    GreeterMethodDescriptorSupplier(String methodName) {
+    AuthorizationMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -292,11 +292,11 @@ public final class GreeterGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (GreeterGrpc.class) {
+      synchronized (AuthorizationGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new GreeterFileDescriptorSupplier())
+              .setSchemaDescriptor(new AuthorizationFileDescriptorSupplier())
               .addMethod(getSayHelloMethod())
               .build();
         }

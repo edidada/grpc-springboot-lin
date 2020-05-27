@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "cn.wdidada.grpc.lib.auth";
+
+package helloworld;
+
+// The greeting service definition.
+service Authorization {
+    // Sends a greeting
+    rpc SayHello (AuthRequest) returns (AuthReply) {}
+}
+
+// The request message containing the user's name.
+message AuthRequest {
+    string name = 1;
+}
+
+// The response message containing the greetings
+message AuthReply {
+    string message = 1;
+}

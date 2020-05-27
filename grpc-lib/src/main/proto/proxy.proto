@@ -1,19 +1,19 @@
 syntax = "proto3";
 
-option java_package = "com.linshen.grpc.lib";
+option java_package = "cn.wdidada.grpc.lib.proxy";
 
 // The greeter service definition.
-service Greeter {
+service IsomerizationProxy {
     // Sends a greeting
-    rpc SayHello ( HelloRequest) returns (  HelloReply) {}
+    rpc RpcCall ( ProxyRequest) returns (  ProxyReply) {}
 
 }
 // The request message containing the user's name.
-message HelloRequest {
+message ProxyRequest {
     string name = 1;
 }
 // The response message containing the greetings
-message HelloReply {
+message ProxyReply {
     string message = 1;
 }
 
